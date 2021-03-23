@@ -40,7 +40,7 @@ gmock = dependency('gmock',
                    required : get_option('unittests'),
                    disabler : true)
 
-abseil = dependency('abseil-cpp')
+abseil = dependency('abseil')
 
 pod2man = find_program('pod2man')
 
