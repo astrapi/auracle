@@ -40,21 +40,7 @@ gmock = dependency('gmock',
                    required : get_option('unittests'),
                    disabler : true)
 
-abseil_proj = subproject(
-  'abseil-cpp',
-  default_options : [
-    'default_library=static',
-  ])
-abseil = declare_dependency(
-  dependencies : [
-    abseil_proj.get_variable('absl_container_dep'),
-    abseil_proj.get_variable('absl_status_dep'),
-    abseil_proj.get_variable('absl_strings_dep'),
-    abseil_proj.get_variable('absl_time_dep'),
-  ],
-  include_directories : [
-    abseil_proj.get_variable('absl_include_dir'),
-  ])
+abseil = dependency('abseil-cpp')
 
 pod2man = find_program('pod2man')
 
